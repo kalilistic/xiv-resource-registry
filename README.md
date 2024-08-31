@@ -3,7 +3,7 @@ The **XIV Resource Registry** is a community-driven initiative designed to store
 Final Fantasy XIV (FFXIV)-related software projects. This registry encompasses a wide range of projects, 
 including plugins, overlays, websites, Discord servers, and more. By adhering to a standard specification, 
 contributors can ensure their projects are easily discoverable and accessible. You can view and search the 
-current repository on the [XIV Resource Registry website](https://github.com/kalilistic/xiv-resource-registry).
+current repository on the [XIV Resource Registry website](https://kalilistic.github.io/xiv-resource-registry/).
 
 ## Use Cases
 - **Automated Aggregation**: Tool developers can pull metadata from the registry to create automated lists, dashboards, or directories of community resources.
