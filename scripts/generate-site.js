@@ -1,17 +1,9 @@
-// noinspection JSUnresolvedReference
-
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const logger = require('./logger');
 const baseDirs = ['authors', 'resources'];
 
-// noinspection HtmlUnknownAttribute
-/**
- * HTML template for the generated site.
- * @type {string}
- */
-// noinspection HtmlUnknownAttribute
 const htmlTemplate = `
 <!DOCTYPE html>
 <html lang="en">
@@ -86,6 +78,14 @@ const htmlTemplate = `
             word-wrap: break-word;
             color: #c3e88d;
         }
+        .yaml-container code {
+            display: block;
+            background-color: #2b2b2b;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
         .blurb {
             margin-bottom: 40px;
             font-size: 1.1em;
@@ -150,17 +150,55 @@ const htmlTemplate = `
             return acc;
         }, {});
 
+        // Render all non-Authors categories first
         for (const [category, files] of Object.entries(groupedData)) {
+            if (category !== 'Authors') {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.classList.add('category');
+
+                const categoryTitle = document.createElement('h2');
+                categoryTitle.textContent = category;
+                categoryDiv.appendChild(categoryTitle);
+
+                const fileList = document.createElement('div');
+                fileList.classList.add('file-list');
+                files.forEach(({ fileName, filePath, data }) => {
+                    const fileContainer = document.createElement('div');
+                    fileContainer.classList.add('yaml-container');
+
+                    const fileTitle = document.createElement('h3');
+                    const titleLink = document.createElement('a');
+                    titleLink.href = \`https://github.com/kalilistic/xiv-resource-registry/blob/master/\${filePath}\`;
+                    titleLink.textContent = fileName;
+                    fileTitle.appendChild(titleLink);
+                    fileContainer.appendChild(fileTitle);
+
+                    const preElement = document.createElement('pre');
+                    const codeElement = document.createElement('code');
+                    codeElement.textContent = data;
+                    preElement.appendChild(codeElement);
+                    fileContainer.appendChild(preElement);
+
+                    fileList.appendChild(fileContainer);
+                });
+
+                categoryDiv.appendChild(fileList);
+                contentDiv.appendChild(categoryDiv);
+            }
+        }
+
+        // Render the Authors category last
+        if (groupedData['Authors']) {
             const categoryDiv = document.createElement('div');
             categoryDiv.classList.add('category');
 
             const categoryTitle = document.createElement('h2');
-            categoryTitle.textContent = category;
+            categoryTitle.textContent = 'Authors';
             categoryDiv.appendChild(categoryTitle);
 
             const fileList = document.createElement('div');
             fileList.classList.add('file-list');
-            files.forEach(({ fileName, filePath, data }) => {
+            groupedData['Authors'].forEach(({ fileName, filePath, data }) => {
                 const fileContainer = document.createElement('div');
                 fileContainer.classList.add('yaml-container');
 
@@ -172,7 +210,9 @@ const htmlTemplate = `
                 fileContainer.appendChild(fileTitle);
 
                 const preElement = document.createElement('pre');
-                preElement.textContent = JSON.stringify(data, null, 2);
+                const codeElement = document.createElement('code');
+                codeElement.textContent = data;
+                preElement.appendChild(codeElement);
                 fileContainer.appendChild(preElement);
 
                 fileList.appendChild(fileContainer);
@@ -187,7 +227,7 @@ const htmlTemplate = `
             const searchTerm = this.value.toLowerCase();
             document.querySelectorAll('.yaml-container').forEach(container => {
                 const fileName = container.querySelector('h3').textContent.toLowerCase();
-                const fileContent = container.querySelector('pre').textContent.toLowerCase();
+                const fileContent = container.querySelector('pre code').textContent.toLowerCase();
                 container.style.display = fileName.includes(searchTerm) || fileContent.includes(searchTerm) ? '' : 'none';
             });
         });
@@ -224,9 +264,7 @@ function generateSite() {
     const yamlData = yamlFiles.map(filePath => {
         try {
             const fileContent = fs.readFileSync(filePath, 'utf8');
-            // noinspection JSCheckFunctionSignatures
-            const data = yaml.load(fileContent);
-            return { fileName: path.relative('.', filePath), data };
+            return { fileName: path.relative('.', filePath), data: fileContent };
         } catch (error) {
             logger.error(`Failed to process file ${filePath}: ${error.message}`);
             return null;
