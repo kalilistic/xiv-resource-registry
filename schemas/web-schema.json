@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "web-schema.json",
+  "title": "Web Schema",
+  "description": "A schema to validate a FFXIV website or application for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The repo author's name which should match their author metadata filename."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the Framework."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the Framework."
+    },
+    "short_name": {
+      "type": "string",
+      "description": "The short name of the Framework."
+    },
+    "website_url": {
+      "type": "string",
+      "description": "The URL to the website related to the Framework.",
+      "format": "uri"
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}

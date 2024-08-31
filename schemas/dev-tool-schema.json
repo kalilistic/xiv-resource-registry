@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dev-tools-schema.json",
+  "title": "Development Tools Schema",
+  "description": "A schema to validate a FFXIV development tool for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The dev tool author's name which should match their author metadata filename."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the Development Tool."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the Development Tool."
+    },
+    "short_name": {
+      "type": "string",
+      "description": "The short name of the Development Tool."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL to the source code repository for the Development Tool.",
+      "format": "uri"
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}

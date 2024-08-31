@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIV Resource Registry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #ffffff;
+        }
+        .github-link {
+            color: #42a5f5;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding-bottom: 2px;
+            margin-left: 10px;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        .github-link svg {
+            margin-right: 8px;
+        }
+        .github-link:hover {
+            color: #ffffff;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        h3 {
+            color: #b3e5fc;
+            text-decoration: none;
+        }
+        h3 a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+        h3 a:hover {
+            text-decoration: underline;
+        }
+        .category {
+            margin-bottom: 40px;
+        }
+        .file-list {
+            margin-left: 20px;
+            display: block;
+        }
+        .yaml-container {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        .yaml-container pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #c3e88d;
+        }
+        .blurb {
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+        #search {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>XIV Resource Registry</h1>
+        <a href="https://github.com/kalilistic/xiv-resource-registry" target="_blank" class="github-link">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            Contribute on GitHub
+        </a>
+    </div>
+    <div class="blurb">
+        The xiv-resource-registry is a community-driven initiative designed to store and manage metadata for FFXIV-related software projects. 
+        This registry encompasses a wide range of projects, including plugins, overlays, websites, Discord servers, and more. By adhering to a standard specification, 
+        contributors can ensure their projects are easily discoverable and accessible.
+    </div>
+    <input type="text" id="search" placeholder="Search resources..." />
+    <div id="content"></div>
+    <script>
+        const yamlData = [{"fileName":"authors/aida-enna.yaml","data":{"name":"Aida-Enna"}},{"fileName":"authors/anna.yaml","data":{"name":"anna"}},{"fileName":"authors/anoyetta.yaml","data":{"name":"anoyetta"}},{"fileName":"authors/awgil.yaml","data":{"name":"awgil"}},{"fileName":"authors/bsides.yaml","data":{"name":"bsides"}},{"fileName":"authors/caiclone.yaml","data":{"name":"CaiClone"}},{"fileName":"authors/caraxian.yaml","data":{"name":"caraxian"}},{"fileName":"authors/carvel.yaml","data":{"name":"carvel"}},{"fileName":"authors/cglatot.yaml","data":{"name":"cglatot"}},{"fileName":"authors/dodingdaga.yaml","data":{"name":"dodingdaga"}},{"fileName":"authors/dsrkafuu.yaml","data":{"name":"dsrkafuu"}},{"fileName":"authors/eqaditu.yaml","data":{"name":"eqaditu"}},{"fileName":"authors/ffxiv-sonar.yaml","data":{"name":"FFXIV-Sonar"}},{"fileName":"authors/goaaats.yaml","data":{"name":"goaaats"}},{"fileName":"authors/goatcorp.yaml","data":{"name":"goatcorp"}},{"fileName":"authors/goldenchrysus.yaml","data":{"name":"GoldenChrysus"}},{"fileName":"authors/haeruhaeru.yaml","data":{"name":"HAERUHAERU"}},{"fileName":"authors/hibiyasleep.yaml","data":{"name":"hibiyasleep"}},{"fileName":"authors/kalilistic.yaml","data":{"name":"kalilistic"}},{"fileName":"authors/karashiiro.yaml","data":{"name":"karashiiro"}},{"fileName":"authors/lightrob.yaml","data":{"name":"LightRob"}},{"fileName":"authors/makar8000.yaml","data":{"name":"Makar8000"}},{"fileName":"authors/noisyfox.yaml","data":{"name":"Noisyfox"}},{"fileName":"authors/nukoooo.yaml","data":{"name":"Nukoooo"}},{"fileName":"authors/ottermandias.yaml","data":{"name":"Ottermandias"}},{"fileName":"authors/overlayplugin.yaml","data":{"name":"OverlayPlugin"}},{"fileName":"authors/paissaheavyindustries.yaml","data":{"name":"paissaheavyindustries"}},{"fileName":"authors/punishxiv.yaml","data":{"name":"PunishXIV"}},{"fileName":"authors/quantity-4.yaml","data":{"name":"Quantity-4"}},{"fileName":"authors/ravahn.yaml","data":{"name":"ravahn"}},{"fileName":"authors/rawrington.yaml","data":{"name":"Rawrington"}},{"fileName":"authors/silasary.yaml","data":{"name":"silasary"}},{"fileName":"authors/slashnephy.yaml","data":{"name":"SlashNephy"}},{"fileName":"authors/soreepeong.yaml","data":{"name":"Soreepeong"}},{"fileName":"authors/syrilai-universalcommandinput.yaml","data":{"name":"Syrilai\nUniversalCommandInput"}},{"fileName":"authors/syrilai.yaml","data":{"name":"Syrilai"}},{"fileName":"authors/the-balance-ffxiv.yaml","data":{"name":"The-Balance-FFXIV"}},{"fileName":"authors/una-xiv.yaml","data":{"name":"una-xiv"}},{"fileName":"authors/valarnin.yaml","data":{"name":"valarnin"}},{"fileName":"authors/xivapi.yaml","data":{"name":"xivapi"}},{"fileName":"authors/xpdota.yaml","data":{"name":"xpdota"}},{"fileName":"resources/act/overlays/ffxiv-ember-overlay.yaml","data":{"name":"ffxiv-ember-overlay","source_url":"https://github.com/GoldenChrysus/ffxiv-ember-overlay","overlay_url":"https://goldenchrysus.github.io/ffxiv/ember-overlay/","author":"GoldenChrysus"}},{"fileName":"resources/act/overlays/horizoverlay.yaml","data":{"name":"horizoverlay","source_url":"https://github.com/bsides/horizoverlay","overlay_url":"https://bsides.github.io/horizoverlay/","author":"bsides"}},{"fileName":"resources/act/overlays/ikegami.yaml","data":{"name":"ikegami","source_url":"https://github.com/hibiyasleep/ikegami","overlay_url":"https://idyllshi.re/ikegami/","author":"hibiyasleep"}},{"fileName":"resources/act/overlays/kagerou.yaml","data":{"name":"kagerou","source_url":"https://github.com/hibiyasleep/kagerou","overlay_url":"https://hibiyasleep.github.io/kagerou/overlay/","author":"hibiyasleep"}},{"fileName":"resources/act/overlays/klondike.yaml","data":{"name":"klondike","source_url":"https://github.com/kalilistic/klondike","overlay_url":"https://kalilistic.github.io/klondike/","author":"kalilistic"}},{"fileName":"resources/act/overlays/mopimopi.yaml","data":{"name":"mopimopi","source_url":"https://github.com/HAERUHAERU/mopimopi","overlay_url":"https://haeruhaeru.github.io/mopimopi/","author":"HAERUHAERU"}},{"fileName":"resources/act/overlays/skilldisplay.yaml","data":{"name":"SkillDisplay","source_url":"https://github.com/Rawrington/SkillDisplay","overlay_url":"https://rawrington.github.io/SkillDisplay/","author":"Rawrington"}},{"fileName":"resources/act/overlays/skyline-overlay.yaml","data":{"name":"skyline-overlay","source_url":"https://github.com/dsrkafuu/skyline-overlay","overlay_url":"https://skyline.dsrkafuu.net/","author":"dsrkafuu"}},{"fileName":"resources/act/plugins/cactbot.yaml","data":{"name":"Cactbot","source_url":"https://github.com/OverlayPlugin/cactbot","author":"OverlayPlugin"}},{"fileName":"resources/act/plugins/discord-triggers.yaml","data":{"name":"Discord Triggers","source_url":"https://github.com/Makar8000/ACT-Discord-Triggers","author":"Makar8000"}},{"fileName":"resources/act/plugins/ffxiv-parsing-plugin.yaml","data":{"name":"FFXIV Parsing Plugin","source_url":"https://github.com/ravahn/FFXIV_ACT_Plugin","author":"ravahn"}},{"fileName":"resources/act/plugins/ffxiv-translate.yaml","data":{"name":"FFXIV Translate","source_url":"https://github.com/Noisyfox/ACT.FFXIVTranslate","author":"Noisyfox"}},{"fileName":"resources/act/plugins/hojoring.yaml","data":{"name":"Hojoring","source_url":"https://github.com/anoyetta/ACT.Hojoring","author":"anoyetta"}},{"fileName":"resources/act/plugins/log-splitter.yaml","data":{"name":"Log Splitter","source_url":"https://github.com/valarnin/ACT_FFXIV_Log_Splitter_Plugin","author":"valarnin"}},{"fileName":"resources/act/plugins/overlayplugin.yaml","data":{"name":"OverlayPlugin","source_url":"https://github.com/OverlayPlugin/OverlayPlugin","author":"OverlayPlugin"}},{"fileName":"resources/act/plugins/triggernometry.yaml","data":{"name":"Triggernometry","source_url":"https://github.com/paissaheavyindustries/Triggernometry","author":"paissaheavyindustries"}},{"fileName":"resources/act/plugins/triggevent.yaml","data":{"name":"Triggevent","source_url":"https://github.com/xpdota/event-trigger","author":"xpdota"}},{"fileName":"resources/act/plugins/universalis.yaml","data":{"name":"Universalis","source_url":"https://github.com/goaaats/universalis_act_plugin","author":"goaaats"}},{"fileName":"resources/dalamud/plugins/umbra-counter-spy.yaml","data":{"plugin_type":"Umbra","name":"Umbra Counter Spy","source_url":"https://github.com/una-xiv/Umbra.CounterSpyPlugin","author":"una-xiv"}},{"fileName":"resources/dalamud/plugins/umbra-currencies-plus.yaml","data":{"plugin_type":"Umbra","name":"Umbra Currencies Plus","source_url":"https://github.com/cglatot/CurrenciesPlus","author":"cglatot"}},{"fileName":"resources/dalamud/plugins/umbra-layout-switcher.yaml","data":{"plugin_type":"Umbra","name":"Umbra Layout Switcher","source_url":"https://github.com/Syrilai/UmbraPlugins","subfolder":"LayoutSwitcher","author":"Syrilai"}},{"fileName":"resources/dalamud/plugins/umbra-sample-plugin.yaml","data":{"plugin_type":"Umbra","name":"Umbra Sample Plugin","source_url":"https://github.com/una-xiv/Umbra.SamplePlugin","author":"una-xiv"}},{"fileName":"resources/dalamud/plugins/umbra-universal-command-input.yaml","data":{"plugin_type":"Umbra","name":"Umbra Universal Command Input","source_url":"https://github.com/Syrilai/UmbraPlugins","subfolder":"UniversalCommandInput","author":"Syrilai"}},{"fileName":"resources/dalamud/plugins/umbra-visibility-compatibility-widget.yaml","data":{"plugin_type":"Umbra","name":"Umbra Visibility Compatibility Widget","source_url":"https://github.com/LightRob/Umbra.VisibilityCompatibilityWidget","author":"LightRob"}},{"fileName":"resources/dalamud/repos/aida-enna.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/Aida-Enna/XIVPlugins/main/repo.json","source_url":"https://github.com/Aida-Enna/XIVPlugins","monorepo_url":"https://github.com/Aida-Enna/XIVPlugins","author":"Aida-Enna"}},{"fileName":"resources/dalamud/repos/anna.yaml","data":{"plugin_master_url":"https://plugins.anna.lgbt","source_url":"https://git.anna.lgbt/anna/plugin_repo","source_type":"Gitea","plugins":[{"internal_name":"Mastercraft","source_type":"Closed"},{"internal_name":"MegaMappingway","source_url":"https://git.anna.lgbt/anna/megamappingway"}],"author":"anna"}},{"fileName":"resources/dalamud/repos/awgil.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/awgil/ffxiv_plugin_distribution/master/pluginmaster.json","source_url":"https://github.com/awgil/ffxiv_plugin_distribution","plugins":[{"internal_name":"borderless-fix","source_url":"https://github.com/awgil/ffxiv_borderless_fix"},{"internal_name":"visland","source_url":"https://github.com/awgil/ffxiv_visland"}],"author":"awgil"}},{"fileName":"resources/dalamud/repos/caiclone.yaml","data":{"plugin_master_url":"https://gist.githubusercontent.com/CaiClone/0aad66569dbf63a9bbeec6a8e95a123f/raw/pluginmaster.json","author":"CaiClone"}},{"fileName":"resources/dalamud/repos/caraxian.yaml","data":{"plugin_master_url":"https://repo.caraxian.com","author":"caraxian"}},{"fileName":"resources/dalamud/repos/carvel.yaml","data":{"plugin_master_url":"https://plugins.carvel.li","source_url":"https://git.carvel.li/liza/plugin-repo","source_type":"Gitea","author":"carvel"}},{"fileName":"resources/dalamud/repos/dodingdaga.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/dodingdaga/DalamudPlugins/main/PuppetMaster.json","source_url":"https://github.com/dodingdaga/DalamudPlugins","monorepo_url":"https://github.com/dodingdaga/DalamudPlugins","author":"dodingdaga"}},{"fileName":"resources/dalamud/repos/ffxiv-sonar.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/FFXIV-Sonar/SonarRepo/main/pluginmaster.json","source_url":"https://github.com/FFXIV-Sonar/SonarRepo","plugins":[{"internal_name":"SonarPlugin-preview","source_url":"https://github.com/FFXIV-Sonar/SonarDistrib"}],"author":"FFXIV-Sonar"}},{"fileName":"resources/dalamud/repos/goaaats.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/goaaats/test/main/cool_custom_repo/repo.json","source_url":"https://github.com/goaaats/test","plugins":[{"internal_name":"Dalamud.FindEverything","source_url":"https://github.com/goaaats/Dalamud.FindAnything"}],"author":"goaaats"}},{"fileName":"resources/dalamud/repos/main-repo.yaml","data":{"name":"Main Repo","plugin_master_url":"https://kamori.goats.dev/Plugin/PluginMaster","source_type":"Closed","is_consensual_mega_repo":true,"is_main_repo":true,"plugins":[{"internal_name":"AbilityAnts","source_url":"https://github.com/attickdoor/AbilityAntsPlugin"},{"internal_name":"AccurateCountdown","plugin_status":"Obsolete","obsolete_reason":"Replaced by EngageTimer"},{"internal_name":"ACTEndcounter","plugin_status":"Adoptable"},{"internal_name":"Altoholic","source_url":"https://github.com/Sohtoren/Altoholic"},{"internal_name":"AutoMammet","source_url":"https://github.com/Rietty/AutoMammet","plugin_status":"Adoptable"},{"internal_name":"autoSweep","plugin_status":"Adoptable"},{"internal_name":"AutoTimer","source_url":"https://github.com/s5bug/AutoTimer"},{"internal_name":"Beachcomber","source_url":"https://github.com/rosella500/IslandWorkshopSolver"},{"internal_name":"BeegWindow","source_url":"https://github.com/arcanedisgea/beegwindow"},{"internal_name":"BetterInBlue","source_url":"https://github.com/NotNite/BetterInBlue"},{"internal_name":"BetterPartyFinder","source_url":"https://github.com/sersorrel/BetterPartyFinder"},{"internal_name":"borderless-fix","source_url":"https://github.com/awgil/ffxiv_borderless_fix"},{"internal_name":"BozjaBuddy","source_url":"https://github.com/kaleidocli/BozjaBuddy"},{"internal_name":"BrowserHost.Plugin","plugin_status":"Obsolete","obsolete_reason":"Replaced by Browsingway"},{"internal_name":"Casexile","source_url":"https://gitlab.com/Bakura/casexile"},{"internal_name":"CharSyncPlugin","plugin_status":"Obsolete","obsolete_reason":"Replaced by Character Data Sync"},{"internal_name":"ChatEmoteColor","plugin_status":"Adoptable"},{"internal_name":"ChatExtender","plugin_status":"Obsolete","obsolete_reason":"Split into Chat Bubbles, Chat Translator, XIVLogger"},{"internal_name":"ChatProximity","source_url":"https://github.com/iv230/chat-proximity"},{"internal_name":"ChatTranslator","plugin_status":"Adoptable"},{"internal_name":"ClarityInChaos","source_url":"https://github.com/meoiswa/ClarityInChaos"},{"internal_name":"CleanHuntChat","source_url":"https://github.com/Guerzoniansus/CleanHuntChat"},{"internal_name":"CoinPouch","plugin_status":"Adoptable"},{"internal_name":"CollectorsAnxiety","plugin_status":"Adoptable"},{"internal_name":"Congratulations","source_url":"https://github.com/jkchen2/ffxiv-congratulations-plugin"},{"internal_name":"CoordImporter","source_url":"https://github.com/zw3lf/ffxiv-coord-importer"},{"internal_name":"CopyTranslated","source_url":"https://github.com/kelvin124124/CopyTranslated"},{"internal_name":"CraftRemaining","source_url":"https://github.com/KoizumiChan/CraftRemnantsXIV"},{"internal_name":"Dalamud.FindAnything","source_url":"https://github.com/goaaats/Dalamud.FindAnything"},{"internal_name":"Dalamud.LoadingImage","source_url":"https://github.com/goaaats/Dalamud.LoadingImage"},{"internal_name":"DalamudMinesweeper","source_url":"https://github.com/hunter2actual/DalamudMinesweeper"},{"internal_name":"DalamudVox","plugin_status":"Adoptable"},{"internal_name":"DeviceChangeFix","plugin_status":"Adoptable"},{"internal_name":"Directional","source_url":"https://github.com/herulume/Directional"},{"internal_name":"Distance","plugin_status":"Adoptable"},{"internal_name":"DomanMahjongStatus","plugin_status":"Adoptable"},{"internal_name":"DynamicUIScaling","source_url":"https://github.com/HybridEidolon/eid-ffxiv-plugins"},{"internal_name":"EorzeaVotes","source_url":"https://git.anna.lgbt/anna/eorzea-votes"},{"internal_name":"FantasyPlayer.Dalamud","plugin_status":"Adoptable"},{"internal_name":"FastJobSwitcher","source_url":"https://github.com/meoiswa/fast-job-switcher"},{"internal_name":"Fungah","source_url":"https://github.com/img02/Fungah-Totally-Safe-Spot"},{"internal_name":"GaugeOMatic","source_url":"https://github.com/itsbexy/gaugeomatic"},{"internal_name":"GearsetHelperPlugin","plugin_status":"Adoptable"},{"internal_name":"Glamaholic","plugin_status":"Adoptable"},{"internal_name":"GoodFriend","plugin_status":"Adoptable"},{"internal_name":"GoodMemory","plugin_status":"Obsolete","obsolete_reason":"Now a vanilla feature"},{"internal_name":"HarpHero","source_url":"https://github.com/MgAl2O4/HarpHeroDalamud"},{"internal_name":"HidePadlock","plugin_status":"Adoptable"},{"internal_name":"HotbarHelper","source_url":"https://github.com/kiwikahawai/HotbarHelper"},{"internal_name":"IslandWorkshopSearch","source_url":"https://github.com/img02/IslandWorkshopSearch"},{"internal_name":"JobIcons","plugin_status":"Obsolete","obsolete_reason":"Replaced by PartyIcons"},{"internal_name":"KikoGuide","plugin_status":"Stale"},{"internal_name":"KitchenSync","plugin_status":"Obsolete","obsolete_reason":"Now a feature in SimpleTweaks"},{"internal_name":"MagitekStratagem","source_url":"https://github.com/meoiswa/MagitekStratagem"},{"internal_name":"MountCollectioner","plugin_status":"Adoptable"},{"internal_name":"MouseTargetTooltip","plugin_status":"Adoptable"},{"internal_name":"MPTimer","plugin_status":"Adoptable"},{"internal_name":"OceanFishin","plugin_status":"Adoptable"},{"internal_name":"OfDungeonsDeep","source_url":"https://github.com/NotNite/OfDungeonsDeep"},{"internal_name":"OhGeeCD","source_url":"https://github.com/kiwikahawai/OhGeeCD","plugin_status":"Adoptable"},{"internal_name":"OopsAllLalafells","plugin_status":"Discontinued"},{"internal_name":"OpenerCreator","source_url":"https://github.com/herulume/OpenerCreator"},{"internal_name":"owofy","source_url":"https://github.com/reiichi001/dalamud-owo"},{"internal_name":"Paggles","source_url":"https://github.com/InvoxiPlayGames/paggles-xiv"},{"internal_name":"PartyListLayout","plugin_status":"Adoptable"},{"internal_name":"PatMe","source_url":"https://github.com/MgAl2O4/PatMeDalamud"},{"internal_name":"PetScale","source_url":"https://github.com/Kurochi51/PetScale"},{"internal_name":"PushyFinder","source_url":"https://github.com/lostkagamine/PushyFinder"},{"internal_name":"QuoteOfTheLobby","plugin_status":"Adoptable"},{"internal_name":"RemindMe","plugin_status":"Adoptable"},{"internal_name":"Reset enmity command","plugin_status":"Adoptable"},{"internal_name":"ResetAudio","plugin_status":"Adoptable"},{"internal_name":"RPBlurb","source_url":"https://github.com/meoiswa/RPBlurb"},{"internal_name":"Say What?","plugin_status":"Adoptable"},{"internal_name":"ShowGear","source_url":"https://github.com/sersorrel/ShowGear"},{"internal_name":"SideHUDPlugin","plugin_status":"Adoptable"},{"internal_name":"SillyChat","plugin_status":"Adoptable"},{"internal_name":"SimpleCompare","plugin_status":"Adoptable"},{"internal_name":"SizeMattersFishing","plugin_status":"Adoptable"},{"internal_name":"SlideCast","plugin_status":"Obsolete","obsolete_reason":"Now a feature in SimpleTweaks"},{"internal_name":"SonarPlugin","source_url":"https://github.com/FFXIV-Sonar/SonarDistrib","discord_url":"https://discord.gg/K7y24Rr"},{"internal_name":"SupineSnail.JobGaugeAdjustments","plugin_status":"Adoptable"},{"internal_name":"TabTab","plugin_status":"Adoptable"},{"internal_name":"TalkCopy","source_url":"https://github.com/Glyceri/TalkCopy"},{"internal_name":"TheDot","source_url":"https://github.com/eja-git/thedotplugin","plugin_status":"Adoptable"},{"internal_name":"TheHeartOfTheParty","plugin_status":"Stale"},{"internal_name":"TickTracker","source_url":"https://github.com/Kurochi51/TickTracker"},{"internal_name":"Tilted","source_url":"https://github.com/meoiswa/TiltedPlugin"},{"internal_name":"Tippy","plugin_status":"Adoptable"},{"internal_name":"TooltipNotes","source_url":"https://github.com/Lerofni/TooltipNotes"},{"internal_name":"TriadBuddy","source_url":"https://github.com/MgAl2O4/FFTriadBuddyDalamud.git"},{"internal_name":"VoidList","plugin_status":"Obsolete","obsolete_reason":"Replaced by Visibility"},{"internal_name":"Waitingway.Dalamud","source_url":"https://github.com/WorkingRobot/Waitingway"},{"internal_name":"WhatDidYouSay","plugin_status":"Adoptable"},{"internal_name":"WheresWOLdo","plugin_status":"Obsolete","obsolete_reason":"Replaced by \"Where am I again?\""},{"internal_name":"WhosTalking","source_url":"https://github.com/sersorrel/WhosTalking"},{"internal_name":"Wordsmith","source_url":"https://github.com/LadyDefile/Wordsmith-DalamudPlugin"},{"internal_name":"XIVChat","source_url":"https://git.anna.lgbt/XIVChat/XIVChat"},{"internal_name":"XIVJitterFix","source_url":"https://github.com/rootdarkarchon/XIVJitterFix"},{"internal_name":"XIVWindowResizer","source_url":"https://github.com/AlexCSDev/XIVWindowResizer"}],"author":"goatcorp"}},{"fileName":"resources/dalamud/repos/nukoooo.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/Nukoooo/DalamudPlugins/dev/pluginmaster.json","source_url":"https://github.com/Nukoooo/DalamudPlugins","plugins":[{"internal_name":"FishersIntuition","source_url":"https://github.com/Nukoooo/Dalamud.FishersIntuition"}],"author":"Nukoooo"}},{"fileName":"resources/dalamud/repos/puni.sh.yaml","data":{"name":"Puni.sh","plugin_master_url":"https://love.puni.sh/ment.json","discord_url":"https://discord.gg/Zzrcc8kmvy","is_consensual_mega_repo":true,"author":"PunishXIV"}},{"fileName":"resources/dalamud/repos/quantity-4.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/Quantity-4/xiv-plugins-repo/main/pluginslist.json","source_url":"https://github.com/Quantity-4/xiv-plugins-repo","plugins":[{"internal_name":"Clairvoyance","source_url":"https://github.com/Quantity-4/xiv-plugins-clairvoyance"}],"author":"Quantity-4"}},{"fileName":"resources/dalamud/repos/sea-of-stars.yaml","data":{"name":"Sea Of Stars","plugin_master_url":"https://raw.githubusercontent.com/Ottermandias/SeaOfStars/main/repo.json","source_url":"https://github.com/Ottermandias/SeaOfStars","is_consensual_mega_repo":true,"plugins":[{"internal_name":"heliosphere-plugin","source_url":"https://github.com/heliosphere-xiv/plugin"}],"author":"Ottermandias"}},{"fileName":"resources/dalamud/repos/silasary.yaml","data":{"plugin_master_url":"https://raw.githubusercontent.com/silasary/APxiv/master/repo.json","source_url":"https://github.com/silasary/APxiv","plugins":[{"internal_name":"ArchipelagoXIV","source_url":"https://github.com/silasary/APxiv"}],"author":"silasary"}},{"fileName":"resources/dalamud/repos/xiv.starry.blue.yaml","data":{"name":"xiv.starry.blue","plugin_master_url":"https://xiv.starry.blue/plugins/master.json","website_url":"https://xiv.starry.blue","source_url":"https://github.com/SlashNephy/divination-distrib","monorepo_url":"https://github.com/SlashNephy/Divination","author":"SlashNephy"}},{"fileName":"resources/desktop/alex.yaml","data":{"name":"XivAlexander","short_name":"Alex","source_url":"https://github.com/Soreepeong/XivAlexander","description":"Latency mitigation and a bunch of modding tools mixed into one giant mishmash of a program.","author":"Soreepeong"}},{"fileName":"resources/dev-tools/lodestone-css-selectors.yaml","data":{"name":"lodestone-css-selectors","source_url":"https://github.com/xivapi/lodestone-css-selectors","description":"CSS selectors for The Lodestone.","author":"xivapi"}},{"fileName":"resources/frameworks/act.yaml","data":{"name":"Advanced Combat Tracker","short_name":"ACT","description":"Advanced Combat Tracker (ACT) is a powerful real-time log parser and analysis tool that supports multiple games through plugins. It offers extensive features like detailed combat data tracking, graphical representations, custom triggers, and export options, making it a versatile tool for players and developers alike.","website_url":"https://advancedcombattracker.com","forum_url":"https://forums.advancedcombattracker.com","discord_url":"https://discord.gg/hK523Pj","author":"eqaditu"}},{"fileName":"resources/frameworks/dalamud.yaml","data":{"name":"Dalamud","description":"Dalamud is a plugin development framework for FINAL FANTASY XIV that provides access to game data and native interoperability with the game itself to add functionality and quality-of-life.","website_url":"https://goatcorp.github.io","discord_url":"https://discord.gg/3NMcUV5","source_url":"https://github.com/goatcorp/Dalamud","author":"goatcorp"}},{"fileName":"resources/web/balance.yaml","data":{"name":"The Balance","short_name":"balance","website_url":"https://www.thebalanceffxiv.com","description":"The Balance provides high-quality job and raid guides for Final Fantasy XIV (FFXIV).","author":"The-Balance-FFXIV"}},{"fileName":"resources/web/xiv-resources.yaml","data":{"name":"XIV Resources","website_url":"https://karashiiro.github.io/xiv-resources/","description":"A list of websites, APIs, and tools for FFXIV. Contributions are welcome.","author":"karashiiro"}},{"fileName":"resources/web/xivplugins.yaml","data":{"name":"XIVPlugins","website_url":"https://www.xivplugins.com","description":"Lists of most Dalamud and ACT plugins.","author":"kalilistic"}}];
+        const contentDiv = document.getElementById('content');
+        const searchInput = document.getElementById('search');
+
+        const categories = {
+            'resources/act/overlays': 'ACT Overlays',
+            'resources/act/plugins': 'ACT Plugins',
+            'resources/dalamud/plugins': 'Dalamud Plugins',
+            'resources/dalamud/repos': 'Dalamud Repos',
+            'resources/desktop': 'Desktop Applications',
+            'resources/dev-tools': 'Development Tools',
+            'resources/frameworks': 'Frameworks',
+            'resources/web': 'Websites & Services',
+            'authors': 'Authors'
+        };
+
+        const groupedData = yamlData.reduce((acc, { fileName, data }) => {
+            for (const [pathPrefix, category] of Object.entries(categories)) {
+                if (fileName.startsWith(pathPrefix)) {
+                    if (!acc[category]) {
+                        acc[category] = [];
+                    }
+                    acc[category].push({ fileName: fileName.replace(pathPrefix + '/', ''), filePath: fileName, data });
+                    break;
+                }
+            }
+            return acc;
+        }, {});
+
+        for (const [category, files] of Object.entries(groupedData)) {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.classList.add('category');
+
+            const categoryTitle = document.createElement('h2');
+            categoryTitle.textContent = category;
+            categoryDiv.appendChild(categoryTitle);
+
+            const fileList = document.createElement('div');
+            fileList.classList.add('file-list');
+            files.forEach(({ fileName, filePath, data }) => {
+                const fileContainer = document.createElement('div');
+                fileContainer.classList.add('yaml-container');
+
+                const fileTitle = document.createElement('h3');
+                const titleLink = document.createElement('a');
+                titleLink.href = `https://github.com/kalilistic/xiv-resource-registry/master/${filePath}`;
+                titleLink.textContent = fileName;
+                fileTitle.appendChild(titleLink);
+                fileContainer.appendChild(fileTitle);
+
+                const preElement = document.createElement('pre');
+                preElement.textContent = JSON.stringify(data, null, 2);
+                fileContainer.appendChild(preElement);
+
+                fileList.appendChild(fileContainer);
+            });
+
+            categoryDiv.appendChild(fileList);
+            contentDiv.appendChild(categoryDiv);
+        }
+
+        // Enhanced search functionality
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            document.querySelectorAll('.yaml-container').forEach(container => {
+                const fileName = container.querySelector('h3').textContent.toLowerCase();
+                const fileContent = container.querySelector('pre').textContent.toLowerCase();
+                container.style.display = fileName.includes(searchTerm) || fileContent.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

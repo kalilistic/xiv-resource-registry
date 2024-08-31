@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "author-schema",
+  "title": "Author Schema",
+  "description": "A schema to validate author data for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the author or creator of the resource."
+    },
+    "kofi_url": {
+      "type": "string",
+      "description": "The URL to the author's Ko-fi page.",
+      "format": "uri"
+    },
+    "paypal_url": {
+      "type": "string",
+      "description": "The URL to the author's PayPal page.",
+      "format": "uri"
+    },
+    "patreon_url": {
+      "type": "string",
+      "description": "The URL to the author's Patreon page.",
+      "format": "uri"
+    },
+    "website_url": {
+      "type": "string",
+      "description": "The URL to the author's personal website.",
+      "format": "uri"
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}

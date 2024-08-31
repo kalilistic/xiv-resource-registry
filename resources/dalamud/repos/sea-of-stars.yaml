@@ -1,0 +1,8 @@
+name: Sea Of Stars
+plugin_master_url: https://raw.githubusercontent.com/Ottermandias/SeaOfStars/main/repo.json
+source_url: https://github.com/Ottermandias/SeaOfStars
+is_consensual_mega_repo: true
+plugins:
+  - internal_name: heliosphere-plugin
+    source_url: https://github.com/heliosphere-xiv/plugin
+author: Ottermandias

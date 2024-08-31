@@ -1,0 +1,6 @@
+plugin_master_url: https://raw.githubusercontent.com/silasary/APxiv/master/repo.json
+source_url: https://github.com/silasary/APxiv
+plugins:
+  - internal_name: ArchipelagoXIV
+    source_url: https://github.com/silasary/APxiv
+author: silasary

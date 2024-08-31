@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dalamud-plugin-schema",
+  "title": "Dalamud Plugin Schema",
+  "description": "A schema to validate Dalamud plugin data for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The repo author's name which should match their author metadata filename."
+    },
+    "discord_url": {
+      "type": "string",
+      "description": "The URL for the Discord server related to the Dalamud plugin.",
+      "format": "uri"
+    },
+    "internal_name": {
+      "type": "string",
+      "description": "The internal name of the plugin."
+    },
+    "name": {
+      "type": "string",
+      "description": "The friendly name of the plugin."
+    },
+    "obsolete_reason": {
+      "type": "string",
+      "description": "The reason the plugin is considered obsolete."
+    },
+    "plugin_status": {
+      "type": "string",
+      "enum": ["Adoptable", "Stale", "Discontinued", "Obsolete"],
+      "description": "The status of the plugin."
+    },
+    "plugin_type": {
+      "type": "string",
+      "enum": ["Standard", "Umbra"],
+      "description": "The type of plugin (e.g., standard, umbra)."
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["GitHub", "GitLab", "Gitea", "Closed"],
+      "description": "The type of source code repository."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL to the plugin's source code.",
+      "format": "uri"
+    },
+    "subfolder": {
+      "type": "string",
+      "description": "The subfolder where the plugin is located; used for monorepos."
+    }
+  },
+  "if": {
+    "properties": { "plugin_type": { "const": "Standard" } }
+  },
+  "then": {
+    "required": ["internal_name"]
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dalamud-repo-schema",
+  "title": "Dalamud Repo Schema",
+  "description": "A schema to validate Dalamud repository data for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The repo author's name which should match their author metadata filename."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the Dalamud Repo."
+    },
+    "discord_url": {
+        "type": "string",
+        "description": "The URL for the Discord server related to the Dalamud Repo.",
+        "format": "uri"
+    },
+    "is_consensual_mega_repo": {
+        "type": "boolean",
+        "description": "Whether the repository includes multiple authors who consented to be part of a mega repo."
+    },
+    "is_main_repo": {
+      "type": "boolean",
+      "description": "Whether the repository is the main Dalamud repository."
+    },
+    "monorepo_url": {
+      "type": "string",
+      "description": "The source url to where source code of multiple plugins are stored.",
+      "format": "uri"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the Dalamud Repo."
+    },
+    "plugin_master_url": {
+      "type": "string",
+      "description": "The URL to the plugin master json for the Dalamud Repo.",
+      "format": "uri"
+    },
+    "plugins": {
+      "type": "array",
+      "description": "The list of plugins provided by the Dalamud Repo.",
+      "items": {
+        "$ref": "./dalamud-plugin-schema.json"
+      }
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["GitHub", "GitLab", "Gitea", "Closed"],
+      "description": "The type of source code repository."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL to the source code repository for the Dalamud Repo.",
+      "format": "uri"
+    },
+    "website_url": {
+      "type": "string",
+      "description": "The URL to the website related to the Dalamud Repo.",
+      "format": "uri"
+    }
+  },
+  "required": ["plugin_master_url"],
+  "additionalProperties": false
+}

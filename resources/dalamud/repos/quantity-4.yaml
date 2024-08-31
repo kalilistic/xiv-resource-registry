@@ -1,0 +1,6 @@
+plugin_master_url: https://raw.githubusercontent.com/Quantity-4/xiv-plugins-repo/main/pluginslist.json
+source_url: https://github.com/Quantity-4/xiv-plugins-repo
+plugins:
+  - internal_name: Clairvoyance
+    source_url: https://github.com/Quantity-4/xiv-plugins-clairvoyance
+author: Quantity-4

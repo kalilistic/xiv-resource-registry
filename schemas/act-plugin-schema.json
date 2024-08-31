@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "act-plugin-schema.json",
+  "title": "ACT Plugin Schema",
+  "description": "A schema to validate a FFXIV ACT Overlay for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The ACT Overlay author's name which should match their author metadata filename."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the ACT Overlay."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL to the source code repository for the ACT Overlay.",
+      "format": "uri"
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}

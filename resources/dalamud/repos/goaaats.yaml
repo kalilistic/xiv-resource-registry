@@ -1,0 +1,6 @@
+plugin_master_url: https://raw.githubusercontent.com/goaaats/test/main/cool_custom_repo/repo.json
+source_url: https://github.com/goaaats/test
+plugins:
+    - internal_name: Dalamud.FindEverything
+      source_url: https://github.com/goaaats/Dalamud.FindAnything
+author: goaaats

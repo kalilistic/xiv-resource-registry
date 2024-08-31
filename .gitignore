@@ -1,0 +1,70 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore artifacts directory
+artifacts/
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore .env files
+.env
+.env.local
+.env.*.local
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+*.iws
+out/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore coverage directory
+coverage/
+
+# Ignore build output
+dist/
+build/
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore npm cache directory
+.npm/
+
+# Ignore temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignore local history directory
+.local_history/
+
+# Ignore editor backup files
+*~
+
+# Ignore miscellaneous system files
+*.log
+*.stackdump
+*.pid
+*.seed
+*.pid.lock
+*.nfs*
+
+# Ignore hidden folders for IntelliJ IDEA
+**/.idea/**
+**/*.iml
+**/*.iws
+**/.idea/**/workspace.xml
+**/.idea/**/tasks.xml
+**/.idea/**/usage.statistics.xml
+**/.idea/**/shelf/
+**/.idea/**/vcs.xml
+**/.idea/**/target/

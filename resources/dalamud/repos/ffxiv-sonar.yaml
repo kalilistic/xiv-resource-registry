@@ -1,0 +1,6 @@
+plugin_master_url: https://raw.githubusercontent.com/FFXIV-Sonar/SonarRepo/main/pluginmaster.json
+source_url: https://github.com/FFXIV-Sonar/SonarRepo
+plugins:
+    - internal_name: SonarPlugin-preview
+      source_url: https://github.com/FFXIV-Sonar/SonarDistrib
+author: FFXIV-Sonar

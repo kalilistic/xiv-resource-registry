@@ -1,0 +1,7 @@
+name: Dalamud
+description: Dalamud is a plugin development framework for FINAL FANTASY XIV that provides access to game data and 
+  native interoperability with the game itself to add functionality and quality-of-life.
+website_url: https://goatcorp.github.io
+discord_url: https://discord.gg/3NMcUV5
+source_url: https://github.com/goatcorp/Dalamud
+author: goatcorp

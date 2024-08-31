@@ -1,0 +1,221 @@
+name: Main Repo
+plugin_master_url: https://kamori.goats.dev/Plugin/PluginMaster
+source_type: Closed
+is_consensual_mega_repo: true
+is_main_repo: true
+plugins:
+  - internal_name: AbilityAnts
+    source_url: https://github.com/attickdoor/AbilityAntsPlugin
+  - internal_name: AccurateCountdown
+    plugin_status: Obsolete
+    obsolete_reason: Replaced by EngageTimer
+  - internal_name: ACTEndcounter
+    plugin_status: Adoptable
+  - internal_name: Altoholic
+    source_url: https://github.com/Sohtoren/Altoholic
+  - internal_name: AutoMammet
+    source_url: https://github.com/Rietty/AutoMammet
+    plugin_status: Adoptable
+  - internal_name: autoSweep
+    plugin_status: Adoptable
+  - internal_name: AutoTimer
+    source_url: https://github.com/s5bug/AutoTimer
+  - internal_name: Beachcomber
+    source_url: https://github.com/rosella500/IslandWorkshopSolver
+  - internal_name: BeegWindow
+    source_url: https://github.com/arcanedisgea/beegwindow
+  - internal_name: BetterInBlue
+    source_url: https://github.com/NotNite/BetterInBlue
+  - internal_name: BetterPartyFinder
+    source_url: https://github.com/sersorrel/BetterPartyFinder
+  - internal_name: borderless-fix
+    source_url: https://github.com/awgil/ffxiv_borderless_fix
+  - internal_name: BozjaBuddy
+    source_url: https://github.com/kaleidocli/BozjaBuddy
+  - internal_name: BrowserHost.Plugin
+    plugin_status: Obsolete
+    obsolete_reason: Replaced by Browsingway
+  - internal_name: Casexile
+    source_url: https://gitlab.com/Bakura/casexile
+  - internal_name: CharSyncPlugin
+    plugin_status: Obsolete
+    obsolete_reason: Replaced by Character Data Sync
+  - internal_name: ChatEmoteColor
+    plugin_status: Adoptable
+  - internal_name: ChatExtender
+    plugin_status: Obsolete
+    obsolete_reason: Split into Chat Bubbles, Chat Translator, XIVLogger
+  - internal_name: ChatProximity
+    source_url: https://github.com/iv230/chat-proximity
+  - internal_name: ChatTranslator
+    plugin_status: Adoptable
+  - internal_name: ClarityInChaos
+    source_url: https://github.com/meoiswa/ClarityInChaos
+  - internal_name: CleanHuntChat
+    source_url: https://github.com/Guerzoniansus/CleanHuntChat
+  - internal_name: CoinPouch
+    plugin_status: Adoptable
+  - internal_name: CollectorsAnxiety
+    plugin_status: Adoptable
+  - internal_name: Congratulations
+    source_url: https://github.com/jkchen2/ffxiv-congratulations-plugin
+  - internal_name: CoordImporter
+    source_url: https://github.com/zw3lf/ffxiv-coord-importer
+  - internal_name: CopyTranslated
+    source_url: https://github.com/kelvin124124/CopyTranslated
+  - internal_name: CraftRemaining
+    source_url: https://github.com/KoizumiChan/CraftRemnantsXIV
+  - internal_name: Dalamud.FindAnything
+    source_url: https://github.com/goaaats/Dalamud.FindAnything
+  - internal_name: Dalamud.LoadingImage
+    source_url: https://github.com/goaaats/Dalamud.LoadingImage
+  - internal_name: DalamudMinesweeper
+    source_url: https://github.com/hunter2actual/DalamudMinesweeper
+  - internal_name: DalamudVox
+    plugin_status: Adoptable
+  - internal_name: DeviceChangeFix
+    plugin_status: Adoptable
+  - internal_name: Directional
+    source_url: https://github.com/herulume/Directional
+  - internal_name: Distance
+    plugin_status: Adoptable
+  - internal_name: DomanMahjongStatus
+    plugin_status: Adoptable
+  - internal_name: DynamicUIScaling
+    source_url: https://github.com/HybridEidolon/eid-ffxiv-plugins
+  - internal_name: EorzeaVotes
+    source_url: https://git.anna.lgbt/anna/eorzea-votes
+  - internal_name: FantasyPlayer.Dalamud
+    plugin_status: Adoptable
+  - internal_name: FastJobSwitcher
+    source_url: https://github.com/meoiswa/fast-job-switcher
+  - internal_name: Fungah
+    source_url: https://github.com/img02/Fungah-Totally-Safe-Spot
+  - internal_name: GaugeOMatic
+    source_url: https://github.com/itsbexy/gaugeomatic
+  - internal_name: GearsetHelperPlugin
+    plugin_status: Adoptable
+  - internal_name: Glamaholic
+    plugin_status: Adoptable
+  - internal_name: GoodFriend
+    plugin_status: Adoptable
+  - internal_name: GoodMemory
+    plugin_status: Obsolete
+    obsolete_reason: Now a vanilla feature
+  - internal_name: HarpHero
+    source_url: https://github.com/MgAl2O4/HarpHeroDalamud
+  - internal_name: HidePadlock
+    plugin_status: Adoptable
+  - internal_name: HotbarHelper
+    source_url: https://github.com/kiwikahawai/HotbarHelper
+  - internal_name: IslandWorkshopSearch
+    source_url: https://github.com/img02/IslandWorkshopSearch
+  - internal_name: JobIcons
+    plugin_status: Obsolete
+    obsolete_reason: Replaced by PartyIcons
+  - internal_name: KikoGuide
+    plugin_status: Stale
+  - internal_name: KitchenSync
+    plugin_status: Obsolete
+    obsolete_reason: Now a feature in SimpleTweaks
+  - internal_name: MagitekStratagem
+    source_url: https://github.com/meoiswa/MagitekStratagem
+  - internal_name: MountCollectioner
+    plugin_status: Adoptable
+  - internal_name: MouseTargetTooltip
+    plugin_status: Adoptable
+  - internal_name: MPTimer
+    plugin_status: Adoptable
+  - internal_name: OceanFishin
+    plugin_status: Adoptable
+  - internal_name: OfDungeonsDeep
+    source_url: https://github.com/NotNite/OfDungeonsDeep
+  - internal_name: OhGeeCD
+    source_url: https://github.com/kiwikahawai/OhGeeCD
+    plugin_status: Adoptable
+  - internal_name: OopsAllLalafells
+    plugin_status: Discontinued
+  - internal_name: OpenerCreator
+    source_url: https://github.com/herulume/OpenerCreator
+  - internal_name: owofy
+    source_url: https://github.com/reiichi001/dalamud-owo
+  - internal_name: Paggles
+    source_url: https://github.com/InvoxiPlayGames/paggles-xiv
+  - internal_name: PartyListLayout
+    plugin_status: Adoptable
+  - internal_name: PatMe
+    source_url: https://github.com/MgAl2O4/PatMeDalamud
+  - internal_name: PetScale
+    source_url: https://github.com/Kurochi51/PetScale
+  - internal_name: PushyFinder
+    source_url: https://github.com/lostkagamine/PushyFinder
+  - internal_name: QuoteOfTheLobby
+    plugin_status: Adoptable
+  - internal_name: RemindMe
+    plugin_status: Adoptable
+  - internal_name: Reset enmity command
+    plugin_status: Adoptable
+  - internal_name: ResetAudio
+    plugin_status: Adoptable
+  - internal_name: RPBlurb
+    source_url: https://github.com/meoiswa/RPBlurb
+  - internal_name: Say What?
+    plugin_status: Adoptable
+  - internal_name: ShowGear
+    source_url: https://github.com/sersorrel/ShowGear
+  - internal_name: SideHUDPlugin
+    plugin_status: Adoptable
+  - internal_name: SillyChat
+    plugin_status: Adoptable
+  - internal_name: SimpleCompare
+    plugin_status: Adoptable
+  - internal_name: SizeMattersFishing
+    plugin_status: Adoptable
+  - internal_name: SlideCast
+    plugin_status: Obsolete
+    obsolete_reason: Now a feature in SimpleTweaks
+  - internal_name: SonarPlugin
+    source_url: https://github.com/FFXIV-Sonar/SonarDistrib
+    discord_url: https://discord.gg/K7y24Rr
+  - internal_name: SupineSnail.JobGaugeAdjustments
+    plugin_status: Adoptable
+  - internal_name: TabTab
+    plugin_status: Adoptable
+  - internal_name: TalkCopy
+    source_url: https://github.com/Glyceri/TalkCopy
+  - internal_name: TheDot
+    source_url: https://github.com/eja-git/thedotplugin
+    plugin_status: Adoptable
+  - internal_name: TheHeartOfTheParty
+    plugin_status: Stale
+  - internal_name: TickTracker
+    source_url: https://github.com/Kurochi51/TickTracker
+  - internal_name: Tilted
+    source_url: https://github.com/meoiswa/TiltedPlugin
+  - internal_name: Tippy
+    plugin_status: Adoptable
+  - internal_name: TooltipNotes
+    source_url: https://github.com/Lerofni/TooltipNotes
+  - internal_name: TriadBuddy
+    source_url: https://github.com/MgAl2O4/FFTriadBuddyDalamud.git
+  - internal_name: VoidList
+    plugin_status: Obsolete
+    obsolete_reason: Replaced by Visibility
+  - internal_name: Waitingway.Dalamud
+    source_url: https://github.com/WorkingRobot/Waitingway
+  - internal_name: WhatDidYouSay
+    plugin_status: Adoptable
+  - internal_name: WheresWOLdo
+    plugin_status: Obsolete
+    obsolete_reason: Replaced by "Where am I again?"
+  - internal_name: WhosTalking
+    source_url: https://github.com/sersorrel/WhosTalking
+  - internal_name: Wordsmith
+    source_url: https://github.com/LadyDefile/Wordsmith-DalamudPlugin
+  - internal_name: XIVChat
+    source_url: https://git.anna.lgbt/XIVChat/XIVChat
+  - internal_name: XIVJitterFix
+    source_url: https://github.com/rootdarkarchon/XIVJitterFix
+  - internal_name: XIVWindowResizer
+    source_url: https://github.com/AlexCSDev/XIVWindowResizer
+author: goatcorp

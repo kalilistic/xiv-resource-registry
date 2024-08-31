@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "desktop-app-schema.json",
+  "title": "Desktop Application Schema",
+  "description": "A schema to validate a FFXIV desktop application for the XIV Resource Registry project.",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "The desktop application author's name which should match their author metadata filename."
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the Desktop Application."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the Desktop Application."
+    },
+    "short_name": {
+      "type": "string",
+      "description": "The short name of the Desktop Application."
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL to the source code repository for the Desktop Application.",
+      "format": "uri"
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
+}
