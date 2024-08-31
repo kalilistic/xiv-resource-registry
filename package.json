@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "process": "npm run rename-files && npm run validate && npm run extract-author && npm run generate-site",
-    "batch": "npm run get-pb-data && npm run process",
+    "batch": "npm run get-main-repo-data && npm run process",
     "validate": "node scripts/validate-yaml.js",
     "extract-author": "node scripts/extract-author.js",
     "rename-files": "node scripts/rename-files.js",
