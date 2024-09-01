@@ -33,9 +33,10 @@ function getVersion() {
  * Merge JSON data into a single file by schema.
  * @param schema
  * @param data
+ * @param subDir
  */
-function mergeJsonBySchema(schema, data) {
-    const jsonFileName = `${schema}.json`;
+function mergeJsonBySchema(schema, data, subDir = '') {
+    const jsonFileName = `${schema}${subDir ? `_${subDir}` : ''}.json`;
     const jsonFilePath = path.join(outputDir, jsonFileName);
 
     let combinedData = [];
@@ -45,7 +46,7 @@ function mergeJsonBySchema(schema, data) {
 
     combinedData.push(...data);
     fs.writeFileSync(jsonFilePath, JSON.stringify(combinedData, null, 2));
-    logger.info(`Merged JSON data for schema: ${schema}`);
+    logger.info(`Merged JSON data for schema: ${schema}${subDir ? ` in subdir: ${subDir}` : ''}`);
 }
 
 /**
@@ -53,11 +54,12 @@ function mergeJsonBySchema(schema, data) {
  */
 function processYamlFiles() {
     for (const [schema, dir] of Object.entries(schemaDirs)) {
-        const combinedData = [];
-
         fs.readdirSync(dir).forEach(file => {
             const filePath = path.join(dir, file);
+            const combinedData = [];
+
             if (fs.statSync(filePath).isDirectory()) {
+                const subDirName = path.basename(filePath);
                 fs.readdirSync(filePath).forEach(subFile => {
                     const subFilePath = path.join(filePath, subFile);
                     if (subFilePath.endsWith('.yaml')) {
@@ -67,20 +69,31 @@ function processYamlFiles() {
                         combinedData.push(data);
                     }
                 });
+
+                if (combinedData.length > 0) {
+                    mergeJsonBySchema(schema, combinedData, subDirName);
+                }
             } else if (filePath.endsWith('.yaml')) {
                 const content = fs.readFileSync(filePath, 'utf8');
                 // noinspection JSCheckFunctionSignatures
                 const data = yaml.load(content);
                 combinedData.push(data);
             }
-        });
 
-        if (combinedData.length > 0) {
-            mergeJsonBySchema(schema, combinedData);
-        }
+            if (combinedData.length > 0 && !fs.statSync(filePath).isDirectory()) {
+                mergeJsonBySchema(schema, combinedData);
+            }
+        });
     }
 }
 
+
+/**
+ * Create a ZIP archive of the specified directories.
+ * @param dirPaths
+ * @param archiveName
+ * @returns {Promise<unknown>}
+ */
 /**
  * Create a ZIP archive of the specified directories.
  * @param dirPaths
@@ -97,8 +110,9 @@ function createArchive(dirPaths, archiveName) {
 
     dirPaths.forEach(dirPath => {
         if (fs.statSync(dirPath).isDirectory()) {
+            // Recursively add directories and their contents, preserving structure
             // noinspection JSCheckFunctionSignatures
-            zip.directory(dirPath, path.basename(dirPath));
+            zip.directory(dirPath, path.relative(path.resolve(__dirname, '../resources'), dirPath));
         } else {
             zip.file(dirPath, { name: path.basename(dirPath) });
         }
