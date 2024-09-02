@@ -1,5 +1,5 @@
-# XIV Resource Registry
-The **XIV Resource Registry** is a community-driven initiative designed to store and manage metadata for 
+# XIV Resource Registry (XIV:RR)
+The **XIV Resource Registry** (XIV:RR) is a community-driven initiative designed to store and manage metadata for 
 Final Fantasy XIV (FFXIV)-related software projects. This registry encompasses a wide range of projects, 
 including plugins, overlays, websites, Discord servers, and more. By adhering to a standard specification, 
 contributors can ensure their projects are easily discoverable and accessible. You can view and search the 
