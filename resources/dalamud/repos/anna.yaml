@@ -1,9 +1,9 @@
 plugin_master_url: https://plugins.anna.lgbt
 source_url: https://git.anna.lgbt/anna/plugin_repo
-source_type: Gitea
+source_type: gitea
 plugins:
     - internal_name: Mastercraft
-      source_type: Closed
+      source_type: closed
     - internal_name: MegaMappingway
       source_url: https://git.anna.lgbt/anna/megamappingway
 author: anna

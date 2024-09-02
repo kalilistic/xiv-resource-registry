@@ -28,31 +28,27 @@
     },
     "plugin_status": {
       "type": "string",
-      "enum": ["Adoptable", "Stale", "Discontinued", "Obsolete"],
+      "enum": ["adoptable", "stale", "discontinued", "obsolete"],
       "description": "The status of the plugin."
     },
     "plugin_type": {
       "type": "string",
-      "enum": ["Standard", "Umbra"],
+      "enum": ["standard", "umbra"],
       "description": "The type of plugin (e.g., standard, umbra)."
     },
     "source_type": {
       "type": "string",
-      "enum": ["GitHub", "GitLab", "Gitea", "Closed"],
+      "enum": ["github", "gitlab", "gitea", "closed"],
       "description": "The type of source code repository."
     },
     "source_url": {
       "type": "string",
       "description": "The URL to the plugin's source code.",
       "format": "uri"
-    },
-    "subfolder": {
-      "type": "string",
-      "description": "The subfolder where the plugin is located; used for monorepos."
     }
   },
   "if": {
-    "properties": { "plugin_type": { "const": "Standard" } }
+    "properties": { "plugin_type": { "const": "standard" } }
   },
   "then": {
     "required": ["internal_name"]

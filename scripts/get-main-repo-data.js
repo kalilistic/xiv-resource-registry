@@ -4,10 +4,10 @@ const logger = require('./logger');
 const yaml = require('js-yaml');
 
 const PLUGIN_STATUS_ENUM = {
-    ADOPTABLE: 'Adoptable',
-    STALE: 'Stale',
-    DISCONTINUED: 'Discontinued',
-    OBSOLETE: 'Obsolete'
+    ADOPTABLE: 'adoptable',
+    STALE: 'stale',
+    DISCONTINUED: 'discontinued',
+    OBSOLETE: 'obsolete'
 };
 
 const DATA_JSON_URL = 'https://raw.githubusercontent.com/tommadness/Plugin-Browser/master/data.json';

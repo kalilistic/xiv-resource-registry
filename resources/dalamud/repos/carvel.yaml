@@ -1,4 +1,4 @@
 plugin_master_url: https://plugins.carvel.li
 source_url: https://git.carvel.li/liza/plugin-repo
-source_type: Gitea
+source_type: gitea
 author: carvel

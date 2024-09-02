@@ -1,5 +1,4 @@
-plugin_type: Umbra
-name: Umbra Layout Switcher
+plugin_type: umbra
+name: Layout Switcher
 source_url: https://github.com/Syrilai/UmbraPlugins
-subfolder: LayoutSwitcher
 author: Syrilai
