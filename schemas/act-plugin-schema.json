@@ -5,6 +5,10 @@
   "description": "A schema to validate a FFXIV ACT Overlay for the XIV Resource Registry project.",
   "type": "object",
   "properties": {
+    "act_plugin_id": {
+        "type": "integer",
+        "description": "ID assigned to plugins published on the ACT Plugin Listing."
+    },
     "author": {
       "type": "string",
       "description": "The ACT Overlay author's name which should match their author metadata filename."
