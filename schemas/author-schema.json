@@ -9,6 +9,10 @@
       "type": "string",
       "description": "The name of the author or creator of the resource."
     },
+    "gh_name": {
+      "type": "string",
+      "description": "The GitHub username of the author."
+    },
     "kofi_url": {
       "type": "string",
       "description": "The URL to the author's Ko-fi page.",

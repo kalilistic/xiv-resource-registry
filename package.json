@@ -4,10 +4,11 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "process": "npm run rename-files && npm run validate && npm run extract-author && npm run generate-site",
+    "process": "npm run rename-files && npm run validate && npm run extract-author && npm run enrich-author && npm run generate-site",
     "batch": "npm run get-main-repo-data && npm run process",
     "validate": "node scripts/validate-yaml.js",
     "extract-author": "node scripts/extract-author.js",
+    "enrich-author": "node scripts/enrich-author.js",
     "rename-files": "node scripts/rename-files.js",
     "get-main-repo-data": "node scripts/get-main-repo-data.js",
     "generate-site": "node scripts/generate-site.js",
