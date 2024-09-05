@@ -13,9 +13,29 @@
       "type": "string",
       "description": "The GitHub username of the author."
     },
+    "amazon_gift_card_url": {
+      "type": "string",
+      "description": "The URL to the author's Amazon gift card page.",
+      "format": "uri"
+    },
+    "cash_app_url": {
+      "type": "string",
+      "description": "The URL to the author's Cash App page.",
+      "format": "uri"
+    },
+    "discord_url": {
+      "type": "string",
+      "description": "The URL to the author's Discord profile.",
+      "format": "uri"
+    },
     "kofi_url": {
       "type": "string",
       "description": "The URL to the author's Ko-fi page.",
+      "format": "uri"
+    },
+    "patreon_url": {
+      "type": "string",
+      "description": "The URL to the author's Patreon page.",
       "format": "uri"
     },
     "paypal_url": {
@@ -23,9 +43,19 @@
       "description": "The URL to the author's PayPal page.",
       "format": "uri"
     },
-    "patreon_url": {
+    "reddit_url": {
       "type": "string",
-      "description": "The URL to the author's Patreon page.",
+      "description": "The URL to the author's Reddit profile.",
+      "format": "uri"
+    },
+    "telegram_url": {
+      "type": "string",
+      "description": "The URL to the author's Telegram profile.",
+      "format": "uri"
+    },
+    "twitter_url": {
+      "type": "string",
+      "description": "The URL to the author's Twitter profile.",
       "format": "uri"
     },
     "website_url": {
