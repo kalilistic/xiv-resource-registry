@@ -68,6 +68,6 @@
       "format": "uri"
     }
   },
-  "required": ["name"],
+  "required": ["name", "gh_name"],
   "additionalProperties": false
 }
