@@ -9,6 +9,10 @@
       "type": "string",
       "description": "The name of the author or creator of the resource."
     },
+    "gh_id": {
+      "type": "integer",
+      "description": "The GitHub user ID of the author."
+    },
     "gh_name": {
       "type": "string",
       "description": "The GitHub username of the author."
