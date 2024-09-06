@@ -204,7 +204,7 @@ const htmlTemplate = `
 
                 const fileTitle = document.createElement('h3');
                 const titleLink = document.createElement('a');
-                titleLink.href = \`https://github.com/kalilistic/xiv-resource-registry/master/\${filePath}\`;
+                titleLink.href = \`https://github.com/kalilistic/xiv-resource-registry/blob/master/\${filePath}\`;
                 titleLink.textContent = fileName;
                 fileTitle.appendChild(titleLink);
                 fileContainer.appendChild(fileTitle);
