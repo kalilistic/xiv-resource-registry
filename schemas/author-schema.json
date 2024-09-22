@@ -9,6 +9,10 @@
       "type": "string",
       "description": "The name of the author or creator of the resource."
     },
+    "bio": {
+      "type": "string",
+      "description": "A brief biography or description of the author."
+    },
     "github_id": {
       "type": "integer",
       "description": "The GitHub user ID of the author."
