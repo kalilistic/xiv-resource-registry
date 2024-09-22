@@ -9,11 +9,11 @@
       "type": "string",
       "description": "The name of the author or creator of the resource."
     },
-    "gh_id": {
+    "github_id": {
       "type": "integer",
       "description": "The GitHub user ID of the author."
     },
-    "gh_name": {
+    "github_name": {
       "type": "string",
       "description": "The GitHub username of the author."
     },
@@ -68,6 +68,6 @@
       "format": "uri"
     }
   },
-  "required": ["name", "gh_name"],
+  "required": ["name", "github_name"],
   "additionalProperties": false
 }

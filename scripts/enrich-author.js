@@ -49,11 +49,11 @@ function updateAuthorYaml(authorName, ghUser, ghId) {
     if (fs.existsSync(authorFilePath)) {
         const authorData = readYamlFile(authorFilePath);
 
-        if (!authorData.gh_name) {
-            authorData.gh_name = ghUser;
+        if (!authorData.github_name) {
+            authorData.github_name = ghUser;
         }
-        if (!authorData.gh_id) {
-            authorData.gh_id = ghId;
+        if (!authorData.github_id) {
+            authorData.github_id = ghId;
         }
 
         writeYamlFile(authorFilePath, authorData);
@@ -79,10 +79,10 @@ async function enrichAuthorsWithGitHub() {
             if (fs.existsSync(authorFilePath)) {
                 const authorData = readYamlFile(authorFilePath);
 
-                if (authorData.gh_name) {
-                    if (!authorData.gh_id) {
+                if (authorData.github_name) {
+                    if (!authorData.github_id) {
                         // Fetch GitHub data to get the user ID
-                        const ghUser = authorData.gh_name;
+                        const ghUser = authorData.github_name;
                         const userData = await fetchGitHubUserData(ghUser);
 
                         if (userData && userData.id) {
@@ -90,10 +90,10 @@ async function enrichAuthorsWithGitHub() {
                             updatedCount++;
                         }
                     } else {
-                        logger.info(`Skipped author (gh_id already set): ${authorName}`);
+                        logger.info(`Skipped author (github_id already set): ${authorName}`);
                     }
                 } else {
-                    logger.info(`Skipped author (gh_name not set): ${authorName}`);
+                    logger.info(`Skipped author (github_name not set): ${authorName}`);
                 }
             }
         }
